@@ -1,0 +1,60 @@
+﻿Duplicate Phrases Regex:
+1. \b(.+)\s*\1\b -- Fails, if String has special characters in between, numbers [ABC$123 $123][1010][23.45 45.2]
+2. (?<!\w)(.+)\s*\1(?!\w) -- Fails for numbers [1010][23.45 45.2]
+3. (?<!\w)(?!\d)(.+)\s*\1(?!\w) -- Not assert the numbers are repeated [123456 123456]
+4. (?<!\w)(?!\d)(.+)\s*\1(?!\w)|(?<!\w)(\d+..+)\s+\2(?!\w)
+5.(?<!\w)(?:(?!\d)(.+)\s*\1|(\d+..+)\s+\2)(?!\w) -simplified 
+
+Social Darwinism is the theory that “survival of the fittest” extended to the business realm. Railroad tycoons like Charles Francis Adams, Jr., believed that they were justified in their overbearing behavior because they had shown themselves to be the most successful competitors in an open market.See 17-3: The Politics of the Industrial AgeThe Politics of the Industrial Age
+Other Examples: 
+1. This expression will will check that words/phrases are duplicate. 
+2. check the Strings with numbers,Special 123..#$%__ 123..#$%__  characters. 
+ a. The Charles bought 10 Apples for price $10 $10. 
+ b. He ate #2 #2 apples from that. 
+ c. The Remaining apples percentage is 80% 80%. 
+ d. He purchased the apples for is customer id:charles@_123 charles@_123.
+ 
+She purchased 1010 gramms of apples at $4.77 per kg.
+Social Darwinism is the theory that “survival of the fittest” extended to the business realm. Railroad tycoons like Charles Francis Adams, Jr., believed that they were justified in their overbearing behavior because they had shown themselves to be the most successful competitors in an open market.See 17-3: The Politics of the Industrial AgeThe Politics of the Industrial Age
+1010 1010 23.56 56.23 56.23 @123 234@ 234@
+
+
+
+6. (?<!\w)(?:(?![ICMX_-]{2,})(?:(?!\d)(.+)\s*\1|(\d+..+)\s+\2))(?!\w)
+
+(?:^|\s)(?:(?![ICMX_-]{2,})(?:(?!\d)(.+)\s*\1|(\d+..+)\s+\2))(?!\w)
+
+
+
+(?<![\w-])image(?![\w-])
+
+
+DS: https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/amp/
+
+Date: https://overiq.com/c-examples/c-program-to-calculate-the-difference-of-two-dates-in-years-months-and-days/
+
+OOP725372085
+
+https://regex101.com/r/gJ0xp3/1
+(?<!\w)(?:(?!\d)(.+)\s*\1|(\d+..+)\s+\2)(?!\w)
+
+
+List<String> listOfDuplicatePhrases = new ArrayList<>();
+		Pattern pattern = Pattern.compile("(?<=^|\\s)(?:(?![ICMX_-]{2,})(?:(?!\\d)(.+)\\s*\\1|(\\d*..*)\\s+\\2))(?!\\w)", Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(content);
+
+		while (matcher.find()) {
+			listOfDuplicatePhrases.add(matcher.group());
+		}
+
+
+
+for (String key : propertyRelatedKeywordsList) {
+			Pattern pattern = Pattern.compile("(?<![\\w-])" + key + "(?![\\w-])", Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(content);
+			if (matcher.find()) {
+				listOfKeywordsPresent.add(key);
+			}
+		}
+
+

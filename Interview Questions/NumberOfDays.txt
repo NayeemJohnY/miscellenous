@@ -1,0 +1,43 @@
+
+
+
+
+if(month1== month2)
+		numberofdays = Math.abs(date1-date2)
+else
+		numberofDays = Math.abs(month.totaldays(year)-date1, 1a ,1b 1c .. month.totaldays-(month.totaldays-date2))
+
+i = year1<=year2? year1:year2
+for(; i<year2; i++){
+	if
+}
+
+
+
+1 Jan 1996 - 31 Dec 2000
+
+NumberOfyears 2000-1996 = 4*365 = 1460
+NumberOfLeapyear 1996 < 2000 = 1
+
+NumberofMOnths = 12-1 = 336
+NumberOfDays = 31-1 = 30
+
+
+5 June 2016 - 7 march 2004
+12 *365 = 4380
+numberOfleapyear = 2004, 2008,2012 = 3
+
+NumberOfmonths = 6-3= 3 = 31+29+31+30+31+5= 157 = 90-60=88 = 2 months + 28
+NumberOfDays = 5 = 5
+
+= 4542-31-29-7
+
+
+6-3= 90
+
+29
+
+
+
+
+

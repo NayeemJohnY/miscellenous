@@ -1,0 +1,27 @@
+Docker -Software
+To Build the App,Managed the App
+
+Hypervisor - Virtualizer
+
+Install docker engine no Hypervisor, No need Vms, create a containers in the same machine
+
+container - software Image of applications - seperate entity -design applications
+
+Advantage: Isolated containers- not sharing resources, independently , NO need of multiple machies, Data cannot be shared impicity
+Secure & Isolation
+Maintenance is low
+Memory Management
+
+Easy to use
+Large Scaling
+Velocity of Deployment
+Flexible
+
+Micro services
+
+Automation Testing uses 
+Docker as like SeleniumGrid
+Container -Hub and containers for browsers
+
+
+installed as Tool Box

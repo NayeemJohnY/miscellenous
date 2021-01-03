@@ -1,0 +1,12 @@
+
+Table 1 movie id and name yaer
+tablle 2 movid_id revene id
+
+select name from movie
+Inner join revenue
+on movie.id= revenue.movie_id
+where revenue = (select revenue from revene  where revne<(select Max(revnee)) order by revenue DESC LIMIT 1 )
+and year = 2020
+ 
+2nd highest grossing movive of the year?
+

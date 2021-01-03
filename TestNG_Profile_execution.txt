@@ -1,0 +1,98 @@
+package tests;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.Test;
+import org.testng.xml.XmlClass;
+import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlTest;
+
+public class BaseTest {
+
+	public String environment = System.getProperty("environment");
+
+	@Test
+	public void createTestNGXml() {
+		XmlSuite suite = new XmlSuite();
+		suite.setName("suite1");
+		XmlTest test = new XmlTest(suite);
+		test.setName("Test1");
+		test.setXmlClasses(getTestClasses());
+		
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter("testng.xml"));
+			bw.write(suite.toXml());
+			bw.flush();
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public List<XmlClass> getTestClasses() {
+		List<XmlClass> classes = new ArrayList<XmlClass>();
+		if (environment.equalsIgnoreCase("INT")) {
+			classes.add(new XmlClass("tests.TC01_SingleSelectActivity"));
+			classes.add(new XmlClass("tests.TC02_ValidateStructureAndReferenceOfCLA"));
+			classes.add(new XmlClass("tests.TC03_SingleSelectContentValidation"));
+		}
+		if (environment.equalsIgnoreCase("PROD")) {
+			classes.add(new XmlClass("tests.TC04_ValidateMediaInCGI"));
+		}
+		return classes;
+	}
+
+}
+
+<execution>
+						<id>base-it</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<test>tests.BaseTest</test>
+						</configuration>
+					</execution>
+					<executions>
+					<execution>
+						<id>it</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						</execution>
+				</executions>
+				
+				
+				<profiles>
+		<profile>
+			<id>INT</id>
+			<activation>
+			<property>
+			<name>environment</name>
+			 <value>INT</value>
+			 </property>
+			</activation>
+			<properties>
+				<testngXMLFile>testng_INT.xml</testngXMLFile>
+			</properties>
+		</profile>
+		<profile>
+			<id>PROD</id>
+			<activation>
+			<property>
+			<name>environment</name>
+			 <value>PROD</value>
+			 </property>
+			</activation>
+			<properties>
+				<testngXMLFile>testng_PROD.xml</testngXMLFile>
+			</properties>
+		</profile>
+	</profiles>
+

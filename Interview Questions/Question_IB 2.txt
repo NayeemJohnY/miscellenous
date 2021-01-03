@@ -1,0 +1,54 @@
+count and sum of number of 8's 1 to 100
+count = 0
+sum = 0
+
+for(int i=1; i<100; i++){
+	temp = i; 81
+	while(temp>0){ 81 8
+	 if(temp%10 ==8){  1 8
+		count++ 
+		sum+= i 81
+	}
+	temp = temp/10; 81/10 
+	}
+
+}
+
+
+arra[] = {10,2,15,35,11,16,50,45};
+
+max1 = a[0];
+max2= a[0];
+
+for(int i =0; i<array.lenght; i++){ 10 2 15 35
+	if(max1<a[i] &&) {
+		max1 =a[i]; 15 35
+	if(max2<ma
+}
+	
+	if(max2<a[i]) 
+		max2 = a[i]; 15
+}
+
+for (int i =0 ; i<array.lenght; i++)
+{
+for(j=i+1; j<array.length; j++){
+	if(a[i]>a[j])
+{
+	temp =a[i];
+	a[i]= a[j]
+	a[j-] =temp
+}
+
+
+syso array[1];
+
+
+x=3 y=5
+
+x= x+y = 8
+y = x-y =8-5 = 3
+x= x-y = 8-3 =5
+
+
+

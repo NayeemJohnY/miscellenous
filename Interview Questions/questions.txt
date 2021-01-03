@@ -1,0 +1,38 @@
+String key = getProductKey();
+
+String key = RestAssured. get("Uri").jsonpath().get("key");
+
+400-bad 
+403 -forbidden 
+
+500 _internal 
+503?
+
+Drop or Delete
+
+select salrary from salray
+join employee
+on employee.id = salary.employee_id
+order by Desc
+LIMIT 2
+
+inner
+
+
+
+select SUM(price) from Prodcut
+Group by brand
+
+FilInputSteam fis = new FiliNpuStrea("dataExce.xlsx");
+
+workbook = WorkBook.
+
+
+Improve
+
+SQL
+
+
+
+
+

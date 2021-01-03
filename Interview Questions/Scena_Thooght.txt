@@ -1,0 +1,44 @@
+
+
+
+https://{baseUR}/?workpsace=123&CGI=AD48/translator/ = 200
+jSON reponse
+
+
+CGI : AD47
+type : "MDOC"
+children {
+type :"abc"
+value : "nayeem"
+}
+
+coupun = >5000 25% 1000
+
+coupun = >5000 25% 2000
+
+(procut*+deli)*25 >2000 =2000
+
+coupun = >5000 20% 1000
+coupun = >4000 25% 1000
+
+validity = once November 
+Eligibity = >5000 
+mutiple sum of > 5000
+4700 +300 = 5000
+
+
+User is buy a single product worth of = 5000 + delivery charges = offer avail
+User is buy a single product worth of = 4999 + delivery charges = offer not avail
+User is buy a single product worth of = 5001 + delivery charges = offer avail
+User is buy a mulitple products of worth of 5000 +deliv = offer avail
+User is buy a mulitple products of worth of 4999 +dele = offer not avail
+user is filing the copoun once again = offer not avail
+user is failing the coupon at November 31 with 5000 amount = offer avail
+user is failing the coupon at Dec 1 = offer not available.
+Check the max discount amount value is 1000 for procut worth (procut price+deliver )*0.25 > 1000= discount calcualted >1000
+Check the 25% discount amount value is for procut worth 5000+deliver  25%
+
+
+
+
+

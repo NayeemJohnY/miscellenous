@@ -1,0 +1,24 @@
+array of some elements of int
+
+array a [] = [2,3,4,5,2 , 3,0}
+array = input
+sum = inout
+1) 0, sum 2) [sum, 0]
+2) array with negative element
+3) array[1]
+4) array isEmpty
+5) 12345678990
+6) float numbers
+7) 4.999 + 1.001 = Round(5)
+find any 2 element xx who sum 23 
+23, 14
+
+for (int i =0  i<a.lenght; i++)
+{
+	for (j = i+1, j <length; j++)
+{
+	if(a[i] +a[j] == sum)
+{
+		syso(a[i] + "" +a[j]);
+}
+

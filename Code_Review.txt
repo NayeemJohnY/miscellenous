@@ -1,0 +1,45 @@
+@Test  method: 
+Method Name contains short test description and ends with ‘Test’ word.It should not start with check/verify/validate/test words.
+
+The specification of the method should contain detailed test case description
+
+All steps in try/catch/finally block. A catch block should handle exception (for example take screenshot, close browser) and report error in HTML report and in log
+
+End a test if an error occurs with environments (status code is not 200 or issue with loading web pages)
+
+Use Hard Asset for dependent verification or only one verification to make the TestNG test fail. 
+
+Use Soft Asser for multiple independent verifications.
+Helper verification methods which are called from a test method: 
+1.	Method name starts with ‘verify’ word (‘validate’ word is commonly used for methods to throw signaling exception and return some data)
+There is a library from Apache that can be used. The package is org.apache.commons.lang3 and it is present in both frameworks
+
+2.	Methods return boolean result ( true – pass, false – fail). The result should be used in an assert
+
+
+
+Test the code thoroughly and use testing data that ideally covers 100% of paths.
+
+Check that new code does not break already existing workflow and tests, does not generate unused data, and does not use unassigned variables and/or empty collections
+
+Duplicated code. Copy-and-paste is risky tool to use. The bug can be in both copies, and later it can be fixed only in one place instead of two
+
+Comments in code should make the code more understandable. Please document important assumptions (for example it can be details about unclear requirements in test cases). The specifications for some obvious methods is not necessarily to write
+
+The code should fail fast. The bugs should not be hided. Examples: using Java collections with static type checking for data structures instead of json objects; not blocking exceptions in the catch blocks; throwing exception or log errors when unexpected data is found
+
+Avoid hardcoded strings and magic numbers
+
+One purpose for each variable. Do not reuse variables for something different in some lines down. This rule safes from bugs, easy to understand and easy to maintain.
+
+Minimize the scope of each variable
+
+Avoid writing methods that modifies passed arguments
+
+Use good names
+
+No global variables (in Java it is public static variables). Only constants are allowed (public static final)
+
+Use whitespace for readability
+
+Check for consistency with the current style standards in the framework

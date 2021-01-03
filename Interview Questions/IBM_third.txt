@@ -1,0 +1,68 @@
+
+
+((JavascriptExecutor)driver).executeScript("document.ready=='complete'");
+((JavascriptExecutor)driver).executeScript("arguments[0].value='" + stringValue +"'", element);
+isSelected = checked =checked
+Javasciprt Alets
+Alert alet = driver.switchT.alert();
+alert.accept();
+alert.dismiss(0;
+alet.sendkeys("keys");
+
+GET 
+POST
+PUT
+HEAD
+OPTIONS
+DELETE
+
+duplicate elements array
+
+array a[] = {1,2,3,1};
+List<Integr> list = new ArrayList<>();
+
+for(int i =0; i<al.lneght
+if(list.contains(a[i]){
+} else{
+	list.add(a[i])
+}
+
+List<Integer> list = Stream.of(array).distinct.collect(Collectors.toList);
+
+
+ input: Welcome to IBM
+output: emocleW ot MBI
+
+String [] = input.split(" ");
+String reverseString
+for(i = 0; i< sring.length; i++)
+{ char [] c= strng[i].toCharrArray();
+string st= 
+for( ; = char.lgenth j >0 ; j--)
+{
+st += cahr[j]
+}
+if(i == string.length-1)
+else 
+reverseString  += st + " ";
+
+
+
+grep test.txr
+
+a= 5 b =10;
+a = a+b ; 15
+b = a-b = 15 -10 ; 5
+a = a-b; 15-5 =10
+
+3 bulbs 
+
+
+reverseString
+
+
+
+
+
+
+
