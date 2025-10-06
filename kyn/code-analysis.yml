@@ -1,0 +1,67 @@
+name: Code Analysis
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches-ignore:
+      - "cron-jobs"
+    paths:
+      - "**.py"
+    types:
+      - opened
+      - labeled
+      - ready_for_review
+
+
+jobs:
+  code-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository source code
+        uses: actions/checkout@v3
+          ref: ${{ github.head_ref }}
+
+      - name: Install & Upgrade Dependencies
+        run: |
+          pip install -r requirements.txt --upgrade --extra-index-url="https://artifcactory.com/code"
+          pip install pylint bandit
+
+      - name: Analysis pylint
+        run: |
+          pylint api helpers tests ui constants.py --ignore-patterns=ignore.py --reports=y --recursive=y --output-format=colorized:pylint-analysis.log --fail-on=E --fail-under=7
+
+      - name: Analysis bandit
+        if: always()
+        run: |
+          bandit -r api helpers tests ui constants.py --exclude=ignore.py -f txt -o bandit-analysis.log
+
+      - name: Analysis Result
+        id: analysis-result
+        if: success() || failure()
+        run: |
+          cat pylint-analysis.log
+          RESULT="pylint: $(grep "Your code has been rated" pylint-analysis.log)"
+          echo "========================================================================================"
+          cat bandit-analysis.log
+          RESULT+="\nbandit: $(grep -A10 "Run metrics" bandit-analysis.log)"
+          echo "result<<EOF" >> "$GITHUB_OUTPUT"
+          echo -e "${RESULT}" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+        shell: bash
+
+      - name: Comment PR with Result
+        uses: actions/github-script@v6
+        if: ${{ (github.event_name == 'pull_request'|| github.event.label.name == 'good to merge') && (success() || failure()) }}
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `**Code Analysis Result**
+              \`\`\`
+              ${{ steps.analysis-result.outputs.result }}
+              \`\`\`
+              _Please refer the workflow run (Checks) for further details._`
+              })
